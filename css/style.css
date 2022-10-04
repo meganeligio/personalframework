@@ -88,7 +88,7 @@ hr {
   font-weight: normal;
   line-height: 1;
   margin: 0;
-  color: rgb(23, 206, 188);
+  color: rgb(149, 81, 169);
 }
 
 .subheadline {
@@ -106,7 +106,7 @@ hr {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border-bottom: 5px solid rgb(23, 206, 188);
+  border-bottom: 5px solid rgb(149, 81, 169);
   display: table;
   padding: 0 0 0.5em 0;
   margin: 1em auto 3em auto;
@@ -115,14 +115,14 @@ hr {
 /* BUTTONS */
 .button {
   display: inline-block;
-  background-color: rgb(23, 206, 188);
+  background-color: rgb(149, 81, 169);
   color: #fff;
   text-decoration: none;
   padding: 1em;
   border-radius: 8px;
 }
 .button:hover {
-  background-color: rgb(10, 149, 135);
+  background-color: rgb(23, 24, 27);
 }
 
 /* RESPONSIVE IMAGES */
@@ -249,7 +249,8 @@ body {
 
 /* SITE STRUCTURE */
 .site-header {
-  background: rgb(10, 149, 135);
+  position: absolute;
+  width: 100%;
   padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,7 +273,7 @@ body {
 
 /* SITE FOOTER */
 .site-footer {
-  background: rgb(10, 149, 135);
+  background: rgb(23, 24, 27);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,11 +307,21 @@ section {
 
 /* HERO SECTION */
 .hero {
-  background: rgb(174, 234, 228);
+  background: rgb(23, 24, 27);
   text-align: center;
+  padding: 8em 0 4em 0;
+  min-height: 100vh;
+  color: rgba(255, 255, 255, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .hero h1 {
   margin-bottom: 0.25em;
+  color: rgb(255, 255, 255);
 }
 .hero p {
   margin: 1em auto;
