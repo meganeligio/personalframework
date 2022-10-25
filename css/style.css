@@ -312,6 +312,10 @@ body {
   text-decoration: none;
 }
 
+.site-main {
+  overflow-x: hidden;
+}
+
 section {
   padding: 4em 0;
   min-height: 101vh;
@@ -600,12 +604,29 @@ section {
 }
 
 /* CSS ANIMATIONS */
-section[data-sectionstate=active] {
-  opacity: 1;
-  -webkit-transition: all 0.4s linear 0.5s;
-  transition: all 0.4s linear 0.5s;
+/* ANIMATE SECTION 1 ON SCROLL */
+#section1.scroll-triggered[data-sectionstate=inactive] .contentblock-img {
+  opacity: 0;
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+}
+#section1.scroll-triggered[data-sectionstate=inactive] .contentblock-text {
+  opacity: 0;
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
 }
 
-section[data-sectionstate=inactive] {
-  opacity: 0;
+#section1.scroll-triggered[data-sectionstate=active] .contentblock-img {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+#section1.scroll-triggered[data-sectionstate=active] .contentblock-text {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
