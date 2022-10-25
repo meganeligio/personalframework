@@ -50,7 +50,7 @@
             opacity: 0;
             transform: translate(50px, 0);
             transition:
-                .3s opacity all linear 0s,
+                .3s opacity linear 0s,
                 .2s transform ease-out .2s;
 
             &:nth-child(0) {
