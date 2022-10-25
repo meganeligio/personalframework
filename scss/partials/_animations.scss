@@ -1,5 +1,51 @@
 /* CSS ANIMATIONS */
 
+/* ANIMATE THE HERO ON LOAD */
+
+.hero {
+
+    h1 {
+        animation-name: scaleup;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+    }
+
+    p {
+        animation-name: scaleup;
+        animation-duration: 2s;
+        animation-delay: .5s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+    }
+
+    .button-group a {
+        animation-name: scaleup;
+        animation-duration: 2s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+
+        &:nth-child(1) {
+            animation-delay: 1s;
+        }
+        &:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+        &:nth-child(3) {
+            animation-delay: 2s;
+        }
+    }
+
+}
+
+@keyframes scaleup {
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 /* ANIMATE SECTION 1 ON SCROLL */
 
 #section1.scroll-triggered[data-sectionstate="inactive"] {
@@ -28,6 +74,75 @@
         opacity: 1;
         transform: translateX(0px);
         transition: all 1s ease-out;
+    }
+
+}
+
+/* ANIMATE SECTION 2 ON SCROLL */
+
+#section2.scroll-triggered[data-sectionstate="inactive"] {
+    
+    background-color: $color-accent-dark;
+
+    .contentblock-img {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    .contentblock-text {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+
+}
+
+#section2.scroll-triggered[data-sectionstate="active"] {
+    
+    background-color: #eee;
+    transition: all 1s ease-out;
+
+    .contentblock-img {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: all 1s ease-out;
+    }
+
+    .contentblock-text {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: all 1s ease-out;
+    }
+
+}
+
+/* ANIMATE SECTION 3 ON SCROLL */
+
+#section3 .contentblock-img {
+    position: relative;
+    margin-top: 4em;
+}
+
+#section3 .s-character {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+#section3.scroll-triggered[data-sectionstate="inactive"] {
+    
+    .s-character {
+        transform: translate(-50%, 50%);
+    }
+
+}
+
+#section3.scroll-triggered[data-sectionstate="active"] {
+
+    .s-character {
+        transform: translate(-50%, -100%);
+        transition: all 1s ease-out .5s;
     }
 
 }

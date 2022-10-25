@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // SCROLL TRIGGERED ANIMATION
+    let options = {
+        threshold: .25
+    }
+
     const myobserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -21,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             entry.target.setAttribute("data-sectionstate", "inactive");
         }
         });
-    });
+    }, options);
   
     document.querySelectorAll(".scroll-triggered").forEach((el) => {
         myobserver.observe(el);
