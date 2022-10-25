@@ -1,0 +1,10 @@
+/* CSS ANIMATIONS */
+
+section[data-sectionstate="active"] {
+    opacity: 1;
+    transition: all .4s linear .5s;
+}
+
+section[data-sectionstate="inactive"] {
+    opacity: 0;
+}

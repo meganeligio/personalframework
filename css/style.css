@@ -41,7 +41,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
 }
 
 /* BASE TYPOGRAPHY */
@@ -89,7 +89,7 @@ hr {
   font-weight: normal;
   line-height: 1;
   margin: 0;
-  color: rgb(11, 190, 160);
+  color: rgb(242, 124, 192);
 }
 
 .subheadline {
@@ -107,7 +107,7 @@ hr {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border-bottom: 5px solid rgb(11, 190, 160);
+  border-bottom: 5px solid rgb(242, 124, 192);
   display: table;
   padding: 0 0 0.5em 0;
   margin: 1em auto 3em auto;
@@ -116,14 +116,20 @@ hr {
 /* BUTTONS */
 .button {
   display: inline-block;
-  background-color: rgb(11, 190, 160);
-  color: #fff;
+  background-color: rgb(242, 124, 192);
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  padding: 1em;
+  padding: 0.6em 1em;
+  margin-top: 1em;
+  margin-right: 0.8em;
   border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 8px rgb(242, 124, 192);
+          box-shadow: 0px 0px 8px rgb(242, 124, 192);
 }
 .button:hover {
-  background-color: rgb(1, 105, 88);
+  background-color: rgb(49, 163, 211);
+  -webkit-box-shadow: 0px 0px 8px rgb(49, 163, 211);
+          box-shadow: 0px 0px 8px rgb(49, 163, 211);
 }
 
 /* RESPONSIVE IMAGES */
@@ -299,6 +305,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 0.5em;
 }
 .site-footer a {
   color: #fff;
@@ -307,7 +314,7 @@ body {
 
 section {
   padding: 4em 0;
-  min-height: 100vh;
+  min-height: 101vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -319,25 +326,18 @@ section {
 /* HERO SECTION */
 .hero {
   background: rgb(23, 24, 27);
-  text-align: center;
+  text-align: left;
   padding: 8em 0 4em 0;
-  min-height: 100vh;
+  min-height: 101vh;
   color: rgba(255, 255, 255, 0.8);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
 }
 .hero h1 {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.35em;
   color: rgb(255, 255, 255);
 }
-.hero p {
-  margin: 1em auto;
-}
-
 /* SITE NAV */
 .site-nav ul {
   margin: 0;
@@ -354,7 +354,7 @@ section {
 }
 
 .site-header .site-nav ul {
-  background: rgb(11, 190, 160);
+  background: rgb(49, 163, 211);
   position: fixed;
   top: 0;
   right: 0;
@@ -597,4 +597,15 @@ section {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }
+}
+
+/* CSS ANIMATIONS */
+section[data-sectionstate=active] {
+  opacity: 1;
+  -webkit-transition: all 0.4s linear 0.5s;
+  transition: all 0.4s linear 0.5s;
+}
+
+section[data-sectionstate=inactive] {
+  opacity: 0;
 }
