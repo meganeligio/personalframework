@@ -89,7 +89,7 @@ hr {
   font-weight: normal;
   line-height: 1;
   margin: 0;
-  color: rgb(149, 81, 169);
+  color: rgb(11, 190, 160);
 }
 
 .subheadline {
@@ -107,7 +107,7 @@ hr {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border-bottom: 5px solid rgb(149, 81, 169);
+  border-bottom: 5px solid rgb(11, 190, 160);
   display: table;
   padding: 0 0 0.5em 0;
   margin: 1em auto 3em auto;
@@ -116,14 +116,14 @@ hr {
 /* BUTTONS */
 .button {
   display: inline-block;
-  background-color: rgb(149, 81, 169);
+  background-color: rgb(11, 190, 160);
   color: #fff;
   text-decoration: none;
   padding: 1em;
   border-radius: 8px;
 }
 .button:hover {
-  background-color: rgb(23, 24, 27);
+  background-color: rgb(1, 105, 88);
 }
 
 /* RESPONSIVE IMAGES */
@@ -354,7 +354,7 @@ section {
 }
 
 .site-header .site-nav ul {
-  background: pink;
+  background: rgb(11, 190, 160);
   position: fixed;
   top: 0;
   right: 0;
@@ -379,14 +379,39 @@ section {
   transition: all 0.3s ease-out;
 }
 .site-header .site-nav[data-navstate=closed] ul {
-  -webkit-transform: translate(100%, -100%);
-          transform: translate(100%, -100%);
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
 }
 .site-header .site-nav .menu-button {
   background-color: transparent;
-  border: 1px solid white;
+  border: none;
   color: white;
-  padding: 0.5em 1em;
+  padding: 0.7em;
   position: relative;
   z-index: 20;
+}
+.site-header .site-nav .menu-button svg {
+  display: block;
+}
+.site-header .site-nav .menu-button svg rect {
+  fill: white;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.site-header .site-nav[data-navstate=open] .menu-button svg rect {
+  fill: white;
+}
+.site-header .site-nav[data-navstate=open] .menu-button svg #menubar-top {
+  -webkit-transform: translate(-5px, 9px) rotate(30deg);
+          transform: translate(-5px, 9px) rotate(30deg);
+}
+.site-header .site-nav[data-navstate=open] .menu-button svg #menubar-mid {
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+}
+.site-header .site-nav[data-navstate=open] .menu-button svg #menubar-bot {
+  -webkit-transform: translate(-5px, -9px) rotate(-30deg);
+          transform: translate(-5px, -9px) rotate(-30deg);
 }

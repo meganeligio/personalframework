@@ -20,7 +20,7 @@
     .site-nav {
 
         ul {
-        background: pink;
+        background: rgb(11 190 160);
         position: fixed;
         top: 0;
         right: 0;
@@ -36,18 +36,53 @@
 
         &[data-navstate="closed"] {
             ul {
-                transform: translate(100%, -100%);
+                transform: translate(100%, 0);
             }
 
         }
 
         .menu-button {
             background-color: transparent;
-            border: 1px solid white;
-            color: white;
-            padding: .5em 1em;
+            border: none;
+            color: #ffff;
+            padding: .7em;
             position: relative;
             z-index: 20;
+
+            svg {
+                display: block;
+
+                rect {
+                    fill: #ffff;
+                    transform-origin: center;
+                    transition: all .3s ease-out;
+                }
+            }
+
         }
+
+        &[data-navstate="open"] .menu-button svg {
+
+            rect {
+                fill: #ffff;
+            }
+
+            #menubar-top {
+                transform: translate(-5px, 9px)
+                rotate(30deg);
+            }
+
+            #menubar-mid {
+                transform: scale(0, 1);
+            }
+
+            #menubar-bot {
+                transform: translate(-5px, -9px)
+                rotate(-30deg);
+            }
+
+        }
+
     }
+
 }
